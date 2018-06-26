@@ -4,10 +4,28 @@ public class p003 {
     }
 
     public String run() {
-        long largest = 0;
-        for (long i = 0; i < (600851475143L / 2); i++) {
+        long n = 600851475143L;
+
+        while (true) {
+            long factor = findSmallestPrimeFactor(n);
+
+            if (factor == n) {
+                return String.valueOf(n);
+            } else {
+                n = n / factor;
+            }
+        }
+    }
+
+    private long findSmallestPrimeFactor(Long n) {
+        long max = (long) Math.ceil(Math.sqrt(n));
+
+        for (long i = 2; i <= max; i++) {
+            if (n % i == 0) {
+                return i;
+            }
         }
 
-        return String.valueOf(largest);
+        return n; // n itself is the only prime factor
     }
 }

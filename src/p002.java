@@ -1,5 +1,9 @@
-public class p002 {
+public class p002 implements Solution {
     public static void main(String[] args) {
+        System.out.println(new p002().run());
+    }
+
+    public String run() {
         int sum = 0;
 
         int one = 0;
@@ -8,11 +12,11 @@ public class p002 {
             one = two;
             two = current;
 
-            if(current % 2 == 0) {
+            if (current % 2 == 0) {
                 sum += current;
             }
         }
 
-        System.out.println(sum);
+        return String.valueOf(sum);
     }
 }

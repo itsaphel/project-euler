@@ -7,7 +7,7 @@ public class p003 {
         long n = 600851475143L;
 
         while (true) {
-            long factor = findSmallestPrimeFactor(n);
+            long factor = findSmallestFactor(n);
 
             if (factor == n) {
                 return String.valueOf(n);
@@ -17,7 +17,7 @@ public class p003 {
         }
     }
 
-    private long findSmallestPrimeFactor(Long n) {
+    private long findSmallestFactor(Long n) {
         long max = (long) Math.ceil(Math.sqrt(n));
 
         for (long i = 2; i <= max; i++) {
@@ -26,6 +26,6 @@ public class p003 {
             }
         }
 
-        return n; // n itself is the only prime factor
+        return n; // n itself is the only factor
     }
 }

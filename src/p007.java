@@ -7,7 +7,7 @@ public class p007 implements Solution {
         int n = 10001;
 
         for (int i = 2, count = 0; ; i++) {
-            if (isPrime(i)) {
+            if (Helpers.bruteforceIsPrime(i)) {
                 count++;
             }
 
@@ -15,21 +15,5 @@ public class p007 implements Solution {
                 return String.valueOf(i);
             }
         }
-    }
-
-    private boolean isPrime(long n) {
-        long end = (long) Math.ceil(Math.sqrt(n));
-
-        if (n == 2) {
-            return true;
-        }
-
-        for (int i = 2; i <= end; i++) {
-            if (n % i == 0) {
-                return false;
-            }
-        }
-
-        return true;
     }
 }

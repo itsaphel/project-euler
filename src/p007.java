@@ -7,7 +7,7 @@ public class p007 implements Solution {
         int n = 10001;
 
         for (int i = 2, count = 0; ; i++) {
-            if (Helpers.bruteforceIsPrime(i)) {
+            if (Helpers.isPrime(i)) {
                 count++;
             }
 

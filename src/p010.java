@@ -6,13 +6,12 @@ public class p010 implements Solution {
     }
 
     public String run() {
-        long n = 2000000;
+        int n = 2000000;
         BigInteger sum = BigInteger.ZERO;
 
-        for (long i = 2; i < n; i++) {
-            if (Helpers.bruteforceIsPrime(i)) {
-                sum = sum.add(BigInteger.valueOf(i));
-            }
+        int[] primes = Helpers.listPrimes(n);
+        for (int i : primes) {
+            sum = sum.add(BigInteger.valueOf(i));
         }
 
         return sum.toString();
